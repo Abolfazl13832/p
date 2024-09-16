@@ -14,8 +14,8 @@ class Store(BaseClass):
         message =str()
         for i in tool_list:
             message +=f""" 
-                        name          quantity
-                        {i.name}              {i.quantity}  """
+                        name\tquantity\trental price
+                        {i.name}\t{i.quantity}\t\t{i.rental_price}  """
         return message
     def show_detail(self):
         message = f"*****SHOP INFORMATION*****\nshop name : {self.name}\nshop contact number : {self.shop_contact_number}\narea : {self.area}\naddress : {self.address}\n*****VENDOR INFORMATION*****\nname : {self.vendor.frist_name} {self.vendor.last_name}\nphone number : {self.vendor.phone_number}\nis licensed : {self.vendor.is_licensed}\n*****TOOL LIST*****\n"

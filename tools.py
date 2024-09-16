@@ -11,7 +11,6 @@ class BaseTool(ABC):
         self.rental_price = rental_price
         super().__init__(*args, **kwargs)
         
-
     @classmethod
     def generate_id(cls):
         cls._id+=1
@@ -29,13 +28,16 @@ class Drill(BaseTool):
     def __init__(self, name, rental_price, quantity, type, mark,  *args, **kwargs):
         self.type = type
         self.mark = mark
-        self.quantity = quantity
-        super().__init__(name, rental_price, quantity *args, **kwargs)
+        super().__init__(name, quantity, rental_price, *args, **kwargs)
+
 
 
 class ConstructionPile(BaseTool):
     def __init__(self, name,size, quantity, rental_price, *args, **kwargs):
         self.size = size
         super().__init__(name, quantity, rental_price, *args, **kwargs)
+    def show_d(self):
+        m=f"****************\n{self.name}\n{self.quantity}**************"
+        return m
 
 
